@@ -1,0 +1,23 @@
+.progress-bar{
+    margin-top: 12rem;
+    width: 100%;
+    height: auto;
+}
+
+.progress-bar h1,
+.progress-bar p {
+    text-align: center;
+}
+
+.progress-bar h1{
+    font-size: 45px;
+
+}
+
+.progress-bar p{
+    margin-top: 12px ;
+    font-size: 30px;
+}
+
+/* for the habits Completion  */
+

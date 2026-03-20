@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self/Planner.com</title>
+    <link rel="stylesheet" href="Css/planner.css">
+    <script src="JavaScript/planner.js"></script>
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-logo">
+            <span>Daily Manager</span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li class="nav-link"><a href="index.html">Home</a></li>
+                <li class="nav-link"><a href="habit.html">Habits</a></li>
+                <li class="nav-link"><a href="planner.html">Planner</a></li>
+                <li class="nav-link"><a href="note.html">Notes</a></li>
+                <li class="nav-link"><a href="progress.html">Progress</a></li>
+                <li class="nav-link"><a href="profile.html">Profile</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- daily list of Planner -->
+
+    <div class="daily-planner">
+         <h1>
+            Daily Planner
+         </h1> 
+         <p>
+            Organize your day with a simple schedule planneer.
+         </p>      
+    </div>
+
+    <!-- daily planner list input and list -->
+
+
+    <div class="planner-container">
+        <input type="text" id="task" placeholder="What to do ">
+
+        <input type="time" id="time">
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="list"></ul>
+    </div>
+
+</body>
+</html>

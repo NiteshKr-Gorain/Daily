@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self/Notes.com</title>
+    <link rel="stylesheet" href="Css/notes.css">
+    <script src="JavaScript/notes.js"></script>
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-logo">
+            <span>Daily Manager</span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li class="nav-link"><a href="index.html">Home</a></li>
+                <li class="nav-link"><a href="habit.html">Habits</a></li>
+                <li class="nav-link"><a href="planner.html">Planner</a></li>
+                <li class="nav-link"><a href="note.html">Notes</a></li>
+                <li class="nav-link"><a href="progress.html">Progress</a></li>
+                <li class="nav-link"><a href="profile.html">Profile</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- heading of the notes page -->
+
+    <div class="note-add">
+        <h1>
+            Quick Notes 
+        </h1>
+        <p>
+            Jot down your thought, ideas, or reminders.
+        </p>
+    </div>
+
+
+    <!-- notes tages and headding... -->
+     <div class="note-container">
+
+        <input type="text" id="title" placeholder="Enter Title">
+        <input type="text" id="point" placeholder="Enter Key Point">
+
+        <div class="btns">
+            <button class="add" onclick="addPoint()">Add Point</button>
+            <button class="next" onclick="nextNote()">Next Note</button>
+        </div>
+
+        <div id="notesArea"></div>
+    </div>
+
+</body>
+</html>

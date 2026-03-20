@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self/Habits.com</title>
+    <link rel="stylesheet" href="Css/habit.css">
+    <script src="JavaScript/habit.js"></script>
+    <link rel="stylesheet" href="Css/style.css">
+
+</head>
+<body>
+    <header>
+        <div class="nav-logo">
+            <span>Daily Manager</span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li class="nav-link"><a href="index.html">Home</a></li>
+                <li class="nav-link"><a href="habit.html">Habits</a></li>
+                <li class="nav-link"><a href="planner.html">Planner</a></li>
+                <li class="nav-link"><a href="note.html">Notes</a></li>
+                <li class="nav-link"><a href="progress.html">Progress</a></li>
+                <li class="nav-link"><a href="profile.html">Profile</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- Daily habits list -->
+
+    <div class="habits-text">
+        <h1>
+            Daily Habbits
+        </h1>
+        <p>
+            Track your daily routines to build better habits.
+        </p>
+    </div>
+
+    <!-- list for the daily habits -->
+
+    <div class="container">
+        <input type="text" id="habit-bar" placeholder="Example @Reading,..">
+        <button onclick="addHabit()">Add</button>
+
+        <ul id="habit-list"></ul>
+    </div>
+
+</body>
+</html>

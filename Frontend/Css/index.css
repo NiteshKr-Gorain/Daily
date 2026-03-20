@@ -1,0 +1,57 @@
+
+.real{
+    margin-top: 12rem;
+    width: 100%;
+    height: auto;    
+}
+
+.real h1, p{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.real h1{
+    font-size: 50px;
+    font-family: 'Monotype Corsiva';
+}
+
+.real p{
+    margin-top: 12px;
+    font-size: 23px;
+    font-family: 'Monotype Corsiva';
+}
+
+
+/* Status bar css */
+
+.status-bar{
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+    display: flex;
+}
+
+.total{
+    width: 30%;
+    height: 250px;
+    border: 2px solid #9696dbba;
+    justify-content: center;
+    margin: auto auto;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 8px -2px #012525ab;
+}
+
+.total h2{
+    font-size: 45px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.total p{
+    font-size: 40px;
+    color: blue;
+    font-weight: 1000;
+    margin-top: 50px;
+}
+

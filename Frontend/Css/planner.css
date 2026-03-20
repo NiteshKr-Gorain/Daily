@@ -1,0 +1,53 @@
+.daily-planner{
+    margin-top: 12rem;
+    width: 100%;
+    height: auto;
+}
+
+.daily-planner h1,
+.daily-planner p {
+    text-align: center;
+}
+
+.daily-planner h1{
+    font-size: 45px;
+
+}
+
+.daily-planner p{
+    margin-top: 12px ;
+    font-size: 30px;
+}
+
+/* for the planner list with time */
+
+.planner-container{
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 8px -2px #012525ab;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#task{
+    width: 55%;
+}
+
+#time{
+    width: 18%;
+}
+
+
+
+.planner-container button {
+    width: 15%;
+    cursor: pointer;
+}
+
+#list{
+    display: flex;
+}

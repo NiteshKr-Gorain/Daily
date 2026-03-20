@@ -1,0 +1,50 @@
+.habits-text{
+    margin-top: 12rem;
+    width: 100%;
+    height: auto;
+}
+
+.habits-text h1, p{
+    text-align: center;
+}
+
+.habits-text h1{
+    font-size: 45px;
+
+}
+
+.habits-text p{
+    margin-top: 12px ;
+    font-size: 30px;
+}
+
+/* list of the habits */
+
+.container{
+    width: 80%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 50px auto 0 auto;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 8px -2px #012525ab;
+    padding: 50px 20px;
+}
+
+#habit-bar{
+    width: 80%;
+
+}
+
+.container button{
+    width: 15%;
+    margin-left: 2.5%;
+    margin-top: 2rem;
+}
+.container ul{
+    text-decoration: none;
+
+}
+
+.completed{
+    text-decoration: none;
+}

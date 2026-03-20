@@ -1,0 +1,69 @@
+.note-add{
+    margin-top: 12rem;
+    width: 100%;
+    height: auto;
+}
+
+.note-add h1,
+.note-add p {
+    text-align: center;
+}
+
+.note-add h1{
+    font-size: 45px;
+}
+
+.note-add p{
+    margin-top: 12px ;
+    font-size: 30px;
+}
+
+
+
+.note-container{
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 8px -2px #012525ab;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.note-container input{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.note-section {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 12px;
+}
+
+.add {
+    background: #28a745;
+}
+
+.next {
+    background: #007bff;
+}
+
+#notesArea li{
+    margin: 5px 0;
+    background: #e3e3e3;
+    padding: 6px;
+    border-radius: 5px;
+}
