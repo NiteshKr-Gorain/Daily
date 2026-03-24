@@ -32,19 +32,21 @@
 
 #habit-bar{
     width: 80%;
-
 }
+
 
 .container button{
     width: 15%;
+    height: fit-content;
     margin-left: 2.5%;
     margin-top: 2rem;
 }
-.container ul{
-    text-decoration: none;
 
+#habit-list{
+    text-decoration: none;
+    margin-top: 20px;
 }
 
-.completed{
-    text-decoration: none;
+#habit-list li{
+    text-decoration: nome;
 }

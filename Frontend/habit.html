@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self/Habits.com</title>
     <link rel="stylesheet" href="Css/habit.css">
-    <script src="JavaScript/habit.js"></script>
+    <script src="JavaScript/habit.js" defer></script>
     <link rel="stylesheet" href="Css/style.css">
 
 </head>
 <body>
     <header>
         <div class="nav-logo">
-            <span>Daily Manager</span>
+            <span><a href="index.html">Daily Manager</a></span>
         </div>
         <div class="nav-list">
             <ul>
@@ -41,9 +41,8 @@
     <!-- list for the daily habits -->
 
     <div class="container">
-        <input type="text" id="habit-bar" placeholder="Example @Reading,..">
-        <button onclick="addHabit()">Add</button>
-
+        <input type="text" id="habit-bar" placeholder="Example @,,,">
+        <button onclick="habitManager('add')" id="add-habits-btn">Add</button>
         <ul id="habit-list"></ul>
     </div>
 

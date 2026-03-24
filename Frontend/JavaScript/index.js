@@ -8,7 +8,8 @@ function autoUpdate() {
     else if (hour < 20) greet = "Good Evening, User!";
     else greet = "Good Night, User!";
 
-    document.getElementById("greeting").innerText = greet;
+    const greetingEl = document.getElementById("greeting");
+    if (greetingEl) greetingEl.innerText = greet;
 
     const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -27,29 +28,38 @@ function autoUpdate() {
             default: return "th";
         }
     }
-    let formattedDate = `Today is ${dayName}, ${day}${getSuffix(day)} ${month} ${year}`;
+    const formattedDate = `Today is ${dayName}, ${day}${getSuffix(day)} ${month} ${year}`;
 
-    document.getElementById("date").innerText = formattedDate;
+    const dateEl = document.getElementById("date");
+    if (dateEl) dateEl.innerText = formattedDate;
 }
-setInterval(autoUpdate, 10);
-autoUpdate();
 
-// function for daily time
-
-document.addEventListener("DOMContentLoaded", ()=>{
-    const habits = window.loadData('dlm_habits',[]);
-    const tasks = window.loadData('dlm_tasks',[]);
-    const profile = window.loadData('dlm_profile',{ name : 'user', gole : 'be produtive' ,bio : ''});
-
-    const totalHabitsEl = document.getElementById("total-habits");
-    const completedHabitsEl = document.getElementById("completed-habits");
-    const totalTaskEl = document.getElementById("total-task");
-
-    if(totalHabitsEl) totalHabitsEl.textContent = habits.length;
-    if(completedHabitsEl) {
-        const completed = habits.filter(h => h.completed).length;
-        completedHabitsEl.textContent = completed;
+function loadData(key, defaultValue = []) {
+    try {
+        const stored = localStorage.getItem(key);
+        return stored ? JSON.parse(stored) : defaultValue;
+    } catch (e) {
+        console.error('Failed to load data for', key, e);
+        return defaultValue;
     }
+}
 
-    if(totalTaskEl)totalTaskEl.textContent = tasks.length;
-})
+function initDashboard() {
+    autoUpdate();
+    setInterval(autoUpdate, 60 * 1000); // update every minute
+
+    const habits = loadData('dlm_habits', []);
+    const tasks = loadData('dlm_tasks', []);
+
+    const totalHabitsEl = document.getElementById('total-habits');
+    const completedHabitsEl = document.getElementById('completed-habits');
+    const totalTaskEl = document.getElementById('total-task');
+    const completedTaskEl = document.getElementById('completed-task');
+
+    if (totalHabitsEl) totalHabitsEl.textContent = habits.length;
+    if (completedHabitsEl) completedHabitsEl.textContent = habits.filter(h => h.completed).length;
+    if (totalTaskEl) totalTaskEl.textContent = tasks.length;
+    if (completedTaskEl) completedTaskEl.textContent = tasks.filter(t => t.completed).length;
+}
+
+window.addEventListener("DOMContentLoaded", initDashboard);

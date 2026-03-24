@@ -210,6 +210,7 @@ header{
     font-size: 2rem;
     margin: auto 2rem;
     font-weight: 1000;
+    cursor: pointer;
 }
 
 .nav-list{
@@ -248,3 +249,7 @@ header{
     color: #0d0dfc;
 }
 
+li{
+    text-decoration: none !important;
+    
+}
