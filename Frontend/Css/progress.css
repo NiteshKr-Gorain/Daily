@@ -21,3 +21,58 @@
 
 /* for the habits Completion  */
 
+#progress-section{
+    width: 80%;
+    height: fit-content;
+    padding-top: 40px;
+    margin: 0 auto;
+    justify-content: center;
+    border: 1px solid #8a84846e;
+    text-align: center;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0 6px 8px -2px #012525ab;
+    margin-bottom: 12px;
+}
+
+
+.progress-dic{
+    width: 270px;
+    height: 270px;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    align-items: center ;
+    border: 1.5pc solid gray;
+}
+
+.progress-dic h1{
+    text-align: center;
+    padding-top: 40%;
+    padding-bottom: 40%;
+}
+
+#progress-section h2{
+    margin-top: 20px;
+}
+
+.total-section {
+    width: 80%;
+    height: fit-content;
+    padding-top: 40px;
+    margin: 0 auto;
+    justify-content: center;
+    border: 1px solid #8a84846e;
+    text-align: center;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0 6px 8px -2px #012525ab;
+    margin-bottom: 50px;
+}   
+
+.total-ta{
+    font-size: 70px;
+    margin-top: 20px;
+    color: #8a24ea;
+}
