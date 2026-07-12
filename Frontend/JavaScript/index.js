@@ -34,32 +34,70 @@ function autoUpdate() {
     if (dateEl) dateEl.innerText = formattedDate;
 }
 
-function loadData(key, defaultValue = []) {
+function updateDashboard() {
+    // Load habits from localStorage
+    let habits = [];
     try {
-        const stored = localStorage.getItem(key);
-        return stored ? JSON.parse(stored) : defaultValue;
+        const stored = localStorage.getItem('dlm_habits');
+        habits = stored ? JSON.parse(stored) : [];
     } catch (e) {
-        console.error('Failed to load data for', key, e);
-        return defaultValue;
+        habits = [];
     }
-}
 
-function initDashboard() {
-    autoUpdate();
-    setInterval(autoUpdate, 60 * 1000); // update every minute
+    // Calculate habit statistics
+    let completedCount = 0;
+    let totalPercentage = 0;
+    
+    habits.forEach(h => {
+        const completedDays = h.days.filter(Boolean).length;
+        const percent = Math.round((completedDays / 7) * 100);
+        totalPercentage += percent;
+        
+        if (percent === 100) {
+            completedCount++;
+        }
+    });
 
-    const habits = loadData('dlm_habits', []);
-    const tasks = loadData('dlm_tasks', []);
+    // Update total habit count
+    const totalEl = document.getElementById('total-habit');
+    if (totalEl) totalEl.textContent = habits.length;
 
-    const totalHabitsEl = document.getElementById('total-habits');
-    const completedHabitsEl = document.getElementById('completed-habits');
+    // Update completed habit count (everyday habits)
+    const completedEl = document.getElementById('completed-habit');
+    if (completedEl) completedEl.textContent = completedCount;
+
+    // Average daily progress
+    const avgProgress = habits.length > 0 ? Math.round(totalPercentage / habits.length) : 0;
+    console.log(`Habits Dashboard: Total: ${habits.length}, Everyday: ${completedCount}, Average Progress: ${avgProgress}%`);
+
+    // Load tasks (if needed)
+    let tasks = [];
+    try {
+        const stored = localStorage.getItem('dlm_tasks');
+        tasks = stored ? JSON.parse(stored) : [];
+    } catch (e) {
+        tasks = [];
+    }
+
+    // Update task counts
     const totalTaskEl = document.getElementById('total-task');
-    const completedTaskEl = document.getElementById('completed-task');
-
-    if (totalHabitsEl) totalHabitsEl.textContent = habits.length;
-    if (completedHabitsEl) completedHabitsEl.textContent = habits.filter(h => h.completed).length;
     if (totalTaskEl) totalTaskEl.textContent = tasks.length;
-    if (completedTaskEl) completedTaskEl.textContent = tasks.filter(t => t.completed).length;
 }
 
-window.addEventListener("DOMContentLoaded", initDashboard);
+window.addEventListener("DOMContentLoaded", () => {
+    autoUpdate();
+    updateDashboard();
+    setInterval(autoUpdate, 60 * 1000);
+});
+
+// Real-time sync from other tabs and habit updates
+window.addEventListener('storage', (event) => {
+    if (event.key === 'dlm_habits' || event.key === 'dlm_tasks') {
+        updateDashboard();
+    }
+});
+
+// Listen for habit updates from habit page
+window.addEventListener('habitsUpdated', () => {
+    updateDashboard();
+});

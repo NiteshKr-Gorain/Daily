@@ -40,11 +40,40 @@
 
     <!-- list for the daily habits -->
 
-    <div class="container">
-        <input type="text" id="habit-bar" placeholder="Example @,,,">
-        <button onclick="habitManager('add')" id="add-habits-btn">Add</button>
-        <ul id="habit-list"></ul>
-    </div>
+    <section id="habit-week-section">
+        <div class="container">
+            <div class="habit-summary">
+                <strong>Total Habits:</strong> <span id="habit-total">0</span>
+                &nbsp;|&nbsp;
+                <strong>Completed Habits</strong> <span id="habit-completed">0</span>
+            </div>
+
+            <input type="text" id="habit-bar" placeholder="Example: Reading, Exercise, Meditation">
+            <button id="add-habits-btn">Add Habit</button>
+
+            <table id="habit-table">
+                <thead>
+                    <tr>
+                        <th>Habit</th>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Progress %</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="habit-list">
+                </tbody>
+            </table>
+        </div>
+    </section>
+     
+        
+     
 
 </body>
 </html>

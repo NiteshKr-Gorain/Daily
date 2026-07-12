@@ -10,43 +10,160 @@
 
 .habits-text h1{
     font-size: 45px;
-
+    color: #333;
 }
 
 .habits-text p{
-    margin-top: 12px ;
-    font-size: 30px;
+    margin-top: 12px;
+    font-size: 20px;
+    color: #666;
 }
 
-/* list of the habits */
+/* Habit week section styling */
 
-.container{
-    width: 80%;
-    height: auto;
-    box-sizing: border-box;
-    margin: 50px auto 0 auto;
-    border-radius: 1.5rem;
+#habit-week-section{
+    width: 85%;
+    height: fit-content;
+    padding-top: 20px;
+    margin: 20px auto;
+    border: 1px solid #8a84846e;
+    text-align: center;
+    border-radius: 20px;
+    padding-bottom: 30px;
     box-shadow: 0 6px 8px -2px #012525ab;
-    padding: 50px 20px;
+}
+
+.habit-summary {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.habit-summary strong {
+    font-weight: bold;
+    margin: 0 5px;
 }
 
 #habit-bar{
-    width: 80%;
+    width: 75%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
-
-.container button{
-    width: 15%;
-    height: fit-content;
-    margin-left: 2.5%;
-    margin-top: 2rem;
+#habit-bar:focus {
+    outline: none;
+    border: 2px solid #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
 }
 
-#habit-list{
-    text-decoration: none;
-    margin-top: 20px;
+.container button {
+    width: auto;
+    padding: 10px 25px;
+    margin-left: 15px;
+    margin-top: 10px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-#habit-list li{
-    text-decoration: nome;
+.container button:hover {
+    background-color: #229954;
 }
+
+/* Table styling */
+
+#habit-table {
+    width: 95%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#habit-table thead {
+    background-color: #34495e;
+    color: white;
+}
+
+#habit-table thead th {
+    padding: 15px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #2c3e50;
+}
+
+#habit-table tbody tr {
+    border-bottom: 1px solid #ecf0f1;
+    transition: background-color 0.2s ease;
+}
+
+#habit-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#habit-table tbody tr:hover {
+    background-color: #ecf0f1;
+}
+
+#habit-table tbody td {
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+
+#habit-table tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+/* Checkbox styling */
+
+#habit-table input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #27ae60;
+}
+
+#habit-table input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+/* Delete button styling */
+
+.delete-btn {
+    padding: 6px 12px;
+    background-color: #e74c3c !important;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b !important;
+}
+
+/* Empty state message */
+
+#habit-list td[colspan] {
+    padding: 30px !important;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
